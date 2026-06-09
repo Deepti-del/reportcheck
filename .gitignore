@@ -1,0 +1,27 @@
+# API keys — never upload these
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Mac
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Temp files
+/tmp/
+*.png
+*.pdf

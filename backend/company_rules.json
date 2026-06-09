@@ -1,0 +1,17 @@
+{
+  "company_name": "Bubble",
+  "primary_font": "",
+  "brand_colours": [],
+  "logo_position": "",
+  "custom_rules": [
+    "Check if the units are placed in the heading. For example when Generation is mentioned (kWh) has to be there"
+  ],
+  "ignored_rules": [],
+  "default_rules": [
+    "Font must be consistent throughout the report",
+    "No placeholder text like TBD, lorem ipsum, or brackets",
+    "Every chart must have a title and axis labels",
+    "Company logo must be visible somewhere in the report",
+    "A date or time period must appear somewhere in the report"
+  ]
+}
