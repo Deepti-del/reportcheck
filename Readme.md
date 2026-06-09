@@ -55,6 +55,5 @@ Open `http://localhost:3000`
 Currently in prototype stage. Actively seeking feedback from report-heavy teams in energy, finance, and consulting.
 
 ## Contact
-
 Built by Deepti Satish
-[LinkedIn](https://www.linkedin.com/in/deepti-satish/)
+[LinkedIn](https://www.linkedin.com/in/deepti-satish/) · [GitHub](https://github.com/Deepti-del)
