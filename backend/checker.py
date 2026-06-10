@@ -84,7 +84,12 @@ Check this report image against every rule below:
 {rules_text}
 
 For EACH rule respond with exactly this format on its own line:
-RULE [number] | [PASS or FAIL or WARN] | [one sentence explanation]
+RULE [number] | [PASS or FAIL or WARN] | [one sentence explanation of what you found] | [if FAIL or WARN: one specific actionable sentence telling exactly how to fix it. If PASS: leave empty]
+
+Examples:
+RULE 1 | PASS | Font is consistently sans-serif throughout all sections |
+RULE 2 | FAIL | KPI cards are unequal width — the third card is narrower than the others | Resize the third KPI card to match the width of the first two cards
+RULE 3 | WARN | No data source label found on the charts | Add a source label below each chart indicating the data origin and date
 
 After all rules add:
 SUMMARY
@@ -107,15 +112,17 @@ def parse_results(response_text: str) -> dict:
         line = line.strip()
         if line.startswith("RULE"):
             parts = line.split("|")
-            if len(parts) == 3:
+            if len(parts) >= 3:
                 rule_part = parts[0].strip()
                 status = parts[1].strip()
                 explanation = parts[2].strip()
+                suggestion = parts[3].strip() if len(parts) > 3 else ""
                 rule_num = rule_part.replace("RULE", "").strip()
                 results.append({
                     "rule_number": rule_num,
                     "status": status,
-                    "explanation": explanation
+                    "explanation": explanation,
+                    "suggestion": suggestion
                 })
         elif line.startswith("Total:"):
             summary["total"] = line.replace("Total:", "").strip()

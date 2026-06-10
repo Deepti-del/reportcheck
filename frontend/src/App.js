@@ -1144,7 +1144,19 @@ function ResultsScreen({ results, setScreen }) {
                     <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 12, padding: "12px 0", opacity: isIgnored ? 0.4 : 1, borderBottom: i < checks.length - 1 ? `1px solid ${c.border}` : "none" }}>
                       <Badge status={check.status} />
                       <div style={{ flex: 1 }}>
-                        <p style={{ fontSize: 13, color: c.text, margin: "0 0 4px", lineHeight: 1.5 }}>{check.explanation}</p>
+                        <p style={{ fontSize: 13, color: c.text, margin: "0 0 4px", lineHeight: 1.5 }}>
+                          {check.explanation}
+                        </p>
+                        {check.suggestion && (
+                          <div style={{
+                            background: c.infoBg, borderRadius: 8,
+                            padding: "8px 12px", marginTop: 6, marginBottom: 4
+                          }}>
+                            <p style={{ fontSize: 12, color: c.info, margin: 0 }}>
+                              💡 <strong>How to fix:</strong> {check.suggestion}
+                            </p>
+                          </div>
+                        )}
                         {(check.status === "FAIL" || check.status === "WARN") && !isIgnored && (
                           <button onClick={() => setIgnored(p => [...p, key])} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 12, color: c.subtle, padding: 0 }}>Ignore this result →</button>
                         )}
