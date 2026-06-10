@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const API = "http://127.0.0.1:8000";
+const API = "https://reportcheck-api.onrender.com";
 
 const c = {
   bg: "#f5f5f5", white: "#ffffff", border: "#e5e5e5",
